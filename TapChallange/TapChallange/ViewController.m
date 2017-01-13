@@ -73,6 +73,18 @@
         [_gameTimer invalidate];
         _gameTimer = nil;
         
+        NSString *message = [NSString stringWithFormat:@"Hai fatto %i Taps!", _tapCounter];
+        
+        UIAlertController *alertViewController = [UIAlertController alertControllerWithTitle:@"Game Over" message:message preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            NSLog(@"OK action premuto");
+        }];
+        
+        
+        [alertViewController addAction:okAction];
+        [self presentViewController:alertViewController animated:true completion:nil];
+        
         [self initializeGame];
     }
 
