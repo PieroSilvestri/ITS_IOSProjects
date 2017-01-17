@@ -10,6 +10,7 @@
 
 #define GameTimer 1 // tempo di stick
 #define GameTime 5 // definisco il tempo di una partita
+#define FirstAppLaunch @"FirstAppLaunch"
 
 @interface ViewController (){
     int _tapCounter; // Conteggio dei tap
@@ -34,7 +35,18 @@
 }
 
 -(void)viewDidAppear:(BOOL)animated{
-    [self mostraUltimoRisultato:[self risultato]];
+    
+    if([self firstAppLaunch] == false){
+        // "Sporco" la variabile con true, così la prossima volta non cambia
+        [[NSUserDefaults standardUserDefaults] setBool:true forKey:FirstAppLaunch];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    }else{
+        if([self risultato] > 0){
+            [self mostraUltimoRisultato:[self risultato]];
+        }
+    }
+    
 }
 
 -(void)initializeGame{
@@ -132,6 +144,11 @@
     
     [[NSUserDefaults standardUserDefaults] setInteger:_tapCounter forKey:stringa_key];
     [[NSUserDefaults standardUserDefaults] synchronize];
+    
+}
+
+-(bool)firstAppLaunch{
+    return [[NSUserDefaults standardUserDefaults] boolForKey:FirstAppLaunch];
 }
 
 
