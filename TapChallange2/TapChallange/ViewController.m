@@ -12,8 +12,8 @@
 #define GameTime 5 // definisco il tempo di una partita
 
 @interface ViewController (){
-    int _tapCounter;
-    int _timeCount;
+    int _tapCounter; // Conteggio dei tap
+    int _timeCount; // Secondi rimanenti
     
     NSTimer *_gameTimer;
 }
@@ -31,6 +31,10 @@
     
     [self initializeGame];
     
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+    [self mostraUltimoRisultato:[self risultato]];
 }
 
 -(void)initializeGame{
@@ -78,16 +82,56 @@
         UIAlertController *alertViewController = [UIAlertController alertControllerWithTitle:@"Game Over" message:message preferredStyle:UIAlertControllerStyleAlert];
         
         UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-            NSLog(@"OK action premuto");
+            // Salvo i dati utente
+            [self salvaRisultato];
+            
+            [self initializeGame];
         }];
         
         
         [alertViewController addAction:okAction];
         [self presentViewController:alertViewController animated:true completion:nil];
-        
-        [self initializeGame];
+       
     }
 
+}
+
+#pragma mark - UI
+
+-(void)mostraUltimoRisultato: (int)risultato{
+    // Voglio che un UIAlertController mi mostri al primo avvio dell'app il precedente risultato del mio utente
+    
+    NSString *message = [NSString stringWithFormat:@"Nella partita precedente hai fatto %i Taps!", risultato];
+
+    
+    UIAlertController *alertViewController = [UIAlertController alertControllerWithTitle:@"Welcome" message:message preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        
+    }];
+    
+    [alertViewController addAction:okAction];
+    [self presentViewController:alertViewController animated:true completion:nil];
+}
+
+
+#pragma mark - Persistenza
+
+-(int)risultato{
+    
+    int value = [[NSUserDefaults standardUserDefaults] integerForKey:@"TapsCount"];
+    
+    NSLog(@"VALORE : %i", value);
+    
+    return value;
+}
+
+-(void)salvaRisultato{
+    
+    NSString *stringa_key = @"TapsCount";
+    
+    [[NSUserDefaults standardUserDefaults] setInteger:_tapCounter forKey:stringa_key];
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 

@@ -307,6 +307,7 @@
 				5DD664EC1E291D33008C94EB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
