@@ -11,6 +11,8 @@
 #define GameTimer 1 // tempo di stick
 #define GameTime 5 // definisco il tempo di una partita
 #define FirstAppLaunch @"FirstAppLaunch"
+#define Defaults [NSUserDefaults standardUserDefaults]
+#define Results @"UserScore"
 
 @interface ViewController (){
     int _tapCounter; // Conteggio dei tap
@@ -38,12 +40,13 @@
     
     if([self firstAppLaunch] == false){
         // "Sporco" la variabile con true, così la prossima volta non cambia
-        [[NSUserDefaults standardUserDefaults] setBool:true forKey:FirstAppLaunch];
-        [[NSUserDefaults standardUserDefaults] synchronize];
+        [Defaults setBool:true forKey:FirstAppLaunch];
+        [Defaults synchronize];
     
     }else{
-        if([self risultato] > 0){
-            [self mostraUltimoRisultato:[self risultato]];
+        if([self risultati].count > 0){
+            NSNumber *value = [self risultati].lastObject;
+            [self mostraUltimoRisultato:value.intValue];
         }
     }
     
@@ -140,11 +143,63 @@
 
 -(void)salvaRisultato{
     
+    NSMutableArray *array = [[Defaults objectForKey:Results] mutableCopy];
     NSString *stringa_key = @"TapsCount";
     
-    [[NSUserDefaults standardUserDefaults] setInteger:_tapCounter forKey:stringa_key];
-    [[NSUserDefaults standardUserDefaults] synchronize];
+    if(array == nil){
+        // Old Way
+        // array = [[NSMutableArray alloc] init].mutableCopy;
+        
+        // New Way and Swift
+        array = @[].mutableCopy;
+    }
     
+    // Old Way
+    // NSNumber *number = [NSNumber numberWithInt:_tapCounter];
+    
+    // Oggetto di tipo intero @(miooggetto)
+    [array addObject:@(_tapCounter)];
+    
+    NSArray *arrayToBeSaved = [array sortedArrayUsingComparator:^NSComparisonResult(NSNumber *obj1, NSNumber *obj2) {
+        int value1 = obj1.intValue;
+        int value2 = obj2.intValue;
+        
+        if(value1 == value2){
+            return NSOrderedSame;
+        }
+        
+        if(value1 < value2){
+            return NSOrderedAscending;
+        }
+        
+        // If value1 > value2
+        return NSOrderedDescending;
+    }];
+    
+    /* Vecchio skinhead codice
+    [Defaults setInteger:_tapCounter forKey:stringa_key];
+    [Defaults synchronize];
+     */
+    
+    NSLog(@"Mio array -> %@", arrayToBeSaved);
+    
+    [Defaults setObject:arrayToBeSaved forKey:Results];
+    [Defaults synchronize];
+    
+}
+
+-(NSArray *)risultati{
+    // Ricavo i dati salvati
+    NSArray *array = [Defaults objectForKey:Results];
+    
+    if(array == nil){
+        array = @[]; // Inizializzo un array statico
+    }
+    
+    // Loggo la variabile "aaray"
+    NSLog(@"Valori dagli userDefault -> %@", array);
+    
+    return array;
 }
 
 -(bool)firstAppLaunch{
