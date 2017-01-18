@@ -13,6 +13,7 @@
 		5DD664E11E291D32008C94EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DD664DF1E291D32008C94EB /* Main.storyboard */; };
 		5DD664E31E291D33008C94EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5DD664E21E291D33008C94EB /* Assets.xcassets */; };
 		5DD664E61E291D33008C94EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DD664E41E291D33008C94EB /* LaunchScreen.storyboard */; };
+		5DF7025F1E2FB1E1006FD2C6 /* ScoreTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DF7025E1E2FB1E1006FD2C6 /* ScoreTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,8 @@
 		5DD664E21E291D33008C94EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5DD664E51E291D33008C94EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5DD664E71E291D33008C94EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5DF7025D1E2FB1E1006FD2C6 /* ScoreTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScoreTableViewController.h; sourceTree = "<group>"; };
+		5DF7025E1E2FB1E1006FD2C6 /* ScoreTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScoreTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +70,8 @@
 				5DD664E41E291D33008C94EB /* LaunchScreen.storyboard */,
 				5DD664E71E291D33008C94EB /* Info.plist */,
 				5DD664D61E291D32008C94EB /* Supporting Files */,
+				5DF7025D1E2FB1E1006FD2C6 /* ScoreTableViewController.h */,
+				5DF7025E1E2FB1E1006FD2C6 /* ScoreTableViewController.m */,
 			);
 			path = TapChallange;
 			sourceTree = "<group>";
@@ -150,6 +155,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5DF7025F1E2FB1E1006FD2C6 /* ScoreTableViewController.m in Sources */,
 				5DD664DE1E291D32008C94EB /* ViewController.m in Sources */,
 				5DD664DB1E291D32008C94EB /* AppDelegate.m in Sources */,
 				5DD664D81E291D32008C94EB /* main.m in Sources */,

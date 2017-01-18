@@ -34,6 +34,7 @@
     
     [self initializeGame];
     
+    self.title = @"Tap Challange";
 }
 
 -(void)viewDidAppear:(BOOL)animated{
