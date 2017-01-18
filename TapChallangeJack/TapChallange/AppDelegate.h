@@ -2,8 +2,8 @@
 //  AppDelegate.h
 //  TapChallange
 //
-//  Created by Daniele Angeli on 13/01/17.
-//  Copyright © 2017 MOLO17 Srl. All rights reserved.
+//  Created by giacomo osso on 13/01/17.
+//  Copyright © 2017 Giacomo Osso. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

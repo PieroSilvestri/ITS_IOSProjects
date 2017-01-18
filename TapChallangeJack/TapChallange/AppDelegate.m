@@ -2,8 +2,8 @@
 //  AppDelegate.m
 //  TapChallange
 //
-//  Created by Daniele Angeli on 13/01/17.
-//  Copyright © 2017 MOLO17 Srl. All rights reserved.
+//  Created by giacomo osso on 13/01/17.
+//  Copyright © 2017 Giacomo Osso. All rights reserved.
 //
 
 #import "AppDelegate.h"
@@ -16,11 +16,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *documentsPath = [paths objectAtIndex:0];
-    NSLog(@"%@", documentsPath);
-    
+  
     // Override point for customization after application launch.
     return YES;
 }

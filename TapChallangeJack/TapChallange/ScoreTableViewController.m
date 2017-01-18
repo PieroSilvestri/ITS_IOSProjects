@@ -1,9 +1,9 @@
 //
 //  ScoreTableViewController.m
-//  TapChallenge
+//  TapChallange
 //
-//  Created by Daniele Angeli on 18/01/17.
-//  Copyright © 2017 MOLO17 Srl. All rights reserved.
+//  Created by giacomo osso on 18/01/17.
+//  Copyright © 2017 Giacomo Osso. All rights reserved.
 //
 
 #import "ScoreTableViewController.h"
@@ -28,6 +28,9 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+- (void) viewWillAppear:(BOOL)animated{
+    [self.tableView reloadData];
+}
 
 #pragma mark - Table view data source
 
@@ -36,17 +39,21 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 10;
+    return self.scoresArray.count;
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ScoreTableViewCell" forIndexPath:indexPath];
     
-    // Configure the cell...
+    NSString *message = [NSString stringWithFormat:@"Row %li -> Score: %@", (long)indexPath.row,
+                         self.scoresArray[indexPath.row]];
+    
+    [cell.textLabel setText:message];
     
     return cell;
-}*/
+}
+
 
 /*
 // Override to support conditional editing of the table view.
