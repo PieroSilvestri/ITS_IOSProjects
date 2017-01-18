@@ -67,6 +67,19 @@
 
 #pragma mark - Actions
 
+-(IBAction)tapGestureRecognizerDidRecognizeTap:(id)sender{
+    NSLog(@"buttonPressed: %i", _tapCounter);
+    
+    if (_gameTimer == nil){
+        _gameTimer = [NSTimer scheduledTimerWithTimeInterval:(GameTimer) target:self selector:@selector(timerTick) userInfo:nil repeats:true];
+    }
+    
+    
+    _tapCounter++;
+    
+    [self.tapsCountLabel setText:[NSString stringWithFormat:@"%i", _tapCounter]];
+}
+
 -(IBAction)buttonPressed:(id)sender{
     NSLog(@"buttonPressed: %i", _tapCounter);
     
