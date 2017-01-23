@@ -33,7 +33,7 @@
     NSMutableArray *array = @[].mutableCopy;
     // array = [NSMutableArray arrayWithCapacity:100];
     
-    for(int i = 0; i < 10; i++){
+    for(int i = 0; i < 100; i++){
         int numeroRandom = [self getRandomNumberBetween:1 to:10];
         [array addObject:@(numeroRandom)];
         NSLog(@"Numero[%i]: %i", i, numeroRandom);
@@ -81,7 +81,7 @@
 #pragma mark - Action
 
 -(IBAction)buttonTouchUpInside:(id)sender{
-    
+    [self initGame];
 }
 
 
