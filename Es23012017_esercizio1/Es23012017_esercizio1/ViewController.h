@@ -15,7 +15,9 @@
 @property (nonatomic, weak) IBOutlet UITextField *userNameTextField;
 
 // Actions:
+// DidEndOnExit: Quando tolgo il focus sul textField
 -(IBAction)userNameTextFieldDidEndOnExit:(id)sender;
+// EditingDidEnd: Quando premo invio dopo l'inserimento
 -(IBAction)userNameTextFieldEditingDidEnd:(id)sender;
 
 

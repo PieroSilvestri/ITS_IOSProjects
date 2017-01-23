@@ -11,5 +11,16 @@
 @interface ViewController : UIViewController
 
 
+@property (nonatomic, weak) IBOutlet UILabel *risultatoLabel;
+@property (nonatomic, weak) IBOutlet UITextField *numberTextField;
+
+
+// Actions:
+// Fai l'azione quando tolgo il focus
+-(IBAction)numberTextFieldDidEndOnExit:(id)sender;
+// Fai l'azione quando premo invio
+-(IBAction)numberTextFieldEditingDidEnd:(id)sender;
+
+
 @end
 
