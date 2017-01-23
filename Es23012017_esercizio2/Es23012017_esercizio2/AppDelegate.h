@@ -1,8 +1,8 @@
 //
 //  AppDelegate.h
-//  TapChallange
+//  Es23012017_esercizio2
 //
-//  Created by giacomo osso on 13/01/17.
+//  Created by Piero Silvestri on 23/01/17.
 //  Copyright © 2017 Piero Silvestri. All rights reserved.
 //
 

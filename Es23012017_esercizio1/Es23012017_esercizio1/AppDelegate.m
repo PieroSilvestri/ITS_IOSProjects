@@ -1,8 +1,8 @@
 //
 //  AppDelegate.m
-//  TapChallange
+//  Es23012017_esercizio1
 //
-//  Created by giacomo osso on 13/01/17.
+//  Created by Piero Silvestri on 23/01/17.
 //  Copyright © 2017 Piero Silvestri. All rights reserved.
 //
 
@@ -16,7 +16,6 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-  
     // Override point for customization after application launch.
     return YES;
 }

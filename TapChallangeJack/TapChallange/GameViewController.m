@@ -3,7 +3,7 @@
 //  TapChallange
 //
 //  Created by giacomo osso on 13/01/17.
-//  Copyright © 2017 Giacomo Osso. All rights reserved.
+//  Copyright © 2017 Piero Silvestri. All rights reserved.
 //
 
 #import "GameViewController.h"
@@ -66,6 +66,9 @@
     
     NSArray *resultsArray = [self risultato];
     [tableViewController setScoresArray:resultsArray];
+    
+    // Instauro il collegamento tra GameVC e ScoreVC attravwerdo il delegate
+    tableViewController.delegate = self;
     
     //pusho all'interno dello stack del mio navigationController un nuovo ViewController
     [self.navigationController pushViewController:tableViewController animated:true];
@@ -229,6 +232,12 @@
     [[NSUserDefaults standardUserDefaults] setInteger: _tapsCounter forKey: @"TapsCount"];
     [[NSUserDefaults standardUserDefaults] synchronize];
      */
+}
+
+#pragma mark - ScoreTableViewController
+
+-(NSArray *)scoreTableViewFetchResults{
+    return [self risultato];
 }
 
 @end

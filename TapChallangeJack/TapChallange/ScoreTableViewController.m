@@ -3,7 +3,7 @@
 //  TapChallange
 //
 //  Created by giacomo osso on 18/01/17.
-//  Copyright © 2017 Giacomo Osso. All rights reserved.
+//  Copyright © 2017 Piero Silvestri. All rights reserved.
 //
 
 #import "ScoreTableViewController.h"
@@ -22,6 +22,9 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    // Richiamo il metodo del mio Delegate
+    NSLog(@"%@",[self.delegate scoreTableViewFetchResults]);
 }
 
 - (void)didReceiveMemoryWarning {

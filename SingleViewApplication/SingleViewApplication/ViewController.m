@@ -89,7 +89,7 @@
 #pragma mark - Actions
 
 // userNameTextField Actions:
--(IBAction)userNameTextFieldDidEndOnExit:(id)sende{
+-(IBAction)userNameTextFieldDidEndOnExit:(id)sender{
     NSLog(@"userNameTextFieldDidEndOnExit");
 }
 
