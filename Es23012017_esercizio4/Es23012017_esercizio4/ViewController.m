@@ -31,7 +31,7 @@
 
 -(void)initGame{
     NSMutableArray *array = @[].mutableCopy;
-    // array = [NSMutableArray arrayWithCapacity:100];
+    // mioArray = [NSMutableArray arrayWithCapacity:100];
     
     for(int i = 0; i < 100; i++){
         int numeroRandom = [self getRandomNumberBetween:1 to:10];
