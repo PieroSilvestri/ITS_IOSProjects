@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="eIE-Cu-BPD">
+                                <rect key="frame" x="0.0" y="101.66666666666669" width="414" height="634.33333333333326"/>
+                            </mapView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Istituto Tecnico Superiore Kennedy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Os6-9A-1cb">
+                                <rect key="frame" x="10" y="29.999999999999996" width="394" height="21.666666666666661"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact">
+                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Via Prasecco 16, Pordenone (PN)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hxp-qh-c8a">
+                                <rect key="frame" x="12" y="68" width="744" height="25.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="eIE-Cu-BPD" secondAttribute="bottom" id="2fI-P5-ibA"/>
+                            <constraint firstItem="eIE-Cu-BPD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="2m7-I1-FgU"/>
+                            <constraint firstItem="Os6-9A-1cb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="10" id="4fn-GA-g4l"/>
+                            <constraint firstAttribute="trailing" secondItem="eIE-Cu-BPD" secondAttribute="trailing" id="LM5-vg-Cj5"/>
+                            <constraint firstItem="Hxp-qh-c8a" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="12" id="Lbq-ZO-2Ft"/>
+                            <constraint firstItem="eIE-Cu-BPD" firstAttribute="top" secondItem="Os6-9A-1cb" secondAttribute="bottom" constant="50" id="bsM-P9-kDN"/>
+                            <constraint firstItem="Os6-9A-1cb" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="bzN-qj-KK4"/>
+                            <constraint firstAttribute="trailing" secondItem="Hxp-qh-c8a" secondAttribute="trailing" constant="12" id="fzM-db-bLC"/>
+                            <constraint firstAttribute="trailing" secondItem="Os6-9A-1cb" secondAttribute="trailing" constant="10" id="hmv-Ye-iQ7"/>
+                            <constraint firstItem="Hxp-qh-c8a" firstAttribute="top" secondItem="Os6-9A-1cb" secondAttribute="bottom" constant="8" id="xbI-La-MbV"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="Hxp-qh-c8a"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="Lbq-ZO-2Ft"/>
+                                <exclude reference="fzM-db-bLC"/>
+                                <exclude reference="xbI-La-MbV"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=regular">
+                            <mask key="subviews">
+                                <include reference="Hxp-qh-c8a"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="Lbq-ZO-2Ft"/>
+                                <include reference="fzM-db-bLC"/>
+                                <include reference="xbI-La-MbV"/>
+                            </mask>
+                        </variation>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="116.25" y="123.59154929577466"/>
+        </scene>
+    </scenes>
+</document>

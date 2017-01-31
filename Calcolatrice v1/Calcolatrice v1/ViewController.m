@@ -15,6 +15,7 @@
     NSString *_valoreSecondo;
     double _primoValore;
     double _secondoValore;
+    char segno;
     Boolean myFlag; // Funziona appena inserisco un nuovo valore dopo il più
     Boolean firstNumber;
 }
@@ -28,6 +29,7 @@
     // Do any additional setup after loading the view, typically from a nib.
     _valoreAttuale = @"0.0";
     _valoreSecondo = @"";
+    myFlag = false;
     [self.myTextField setText:_valoreAttuale];
 }
 
@@ -43,29 +45,58 @@
     if([_valoreAttuale  isEqualToString: @"0.0"] || [_valoreAttuale isEqualToString:@"0"]){
         _valoreAttuale = newValue;
     }else{
-        if(myFlag){
-            if(![newValue isEqualToString:@"="]){
-                _valoreSecondo = [_valoreSecondo stringByAppendingString:newValue];
-                NSLog(@"newValue != '=', newValue = %@", newValue);
-                NSLog(@"VALORE SECONDO DENTRO: %@", _valoreSecondo);
-            }
-        }
         if([newValue isEqualToString:@"+"]){
             _primoValore = [_valoreAttuale doubleValue];
+            segno = '+';
+            myFlag = true;
+        }
+        if([newValue isEqualToString:@"-"]){
+            _primoValore = [_valoreAttuale doubleValue];
+            segno = '-';
+            myFlag = true;
+        }
+        if([newValue isEqualToString:@"x"]){
+            _primoValore = [_valoreAttuale doubleValue];
+            segno = 'x';
+            myFlag = true;
+        }
+        if([newValue isEqualToString:@"/"]){
+            _primoValore = [_valoreAttuale doubleValue];
+            segno = '/';
             myFlag = true;
         }
         if([newValue isEqualToString:@"="]){
-            NSLog(@"VALORE SECONDO: %@", _valoreSecondo);
-            _secondoValore = [_valoreSecondo doubleValue];
-            double somma = _primoValore + _secondoValore;
-            NSString *totale = [NSString stringWithFormat:@"Valore 1: %f \n Valore 2: %f \n Somma = %f", _primoValore, _secondoValore, somma];
-            NSLog(@"%@", totale);
-            _valoreAttuale = [NSString stringWithFormat:@"%f", somma];
+            NSLog(@"ANCHE QUI PRENDE");
+            _secondoValore = [_valoreAttuale doubleValue];
         }else{
             _valoreAttuale = [_valoreAttuale stringByAppendingString:newValue];
         }
     }
     [myTextFieldSelf setText:_valoreAttuale];
+    if([newValue isEqualToString:@"="]){
+        NSString *risultato;
+        switch(segno){
+                case '+':
+                    risultato = [NSString stringWithFormat:@"%f", (_primoValore + _secondoValore)];
+                    break;
+                case '-':
+                    risultato = [NSString stringWithFormat:@"%f", (_primoValore - _secondoValore)];
+                    break;
+                case 'x':
+                    risultato = [NSString stringWithFormat:@"%f", (_primoValore * _secondoValore)];
+                    break;
+                case '/':
+                    risultato = [NSString stringWithFormat:@"%f", (_primoValore / _secondoValore)];
+                    break;
+        }
+        _valoreAttuale = risultato;
+        [myTextFieldSelf setText:_valoreAttuale];
+    }
+    if(myFlag){
+        _valoreAttuale = @"";
+        myFlag = false;
+    }
+    
 }
 
 #pragma mark - Actions
@@ -117,7 +148,7 @@
     [self updateTextField:@"-"];
 }
 -(IBAction)buttonPerPressed:(id)sender;{
-    [self updateTextField:@"*"];
+    [self updateTextField:@"x"];
 }
 -(IBAction)buttonDivisoPressed:(id)sender{
     [self updateTextField:@"/"];
