@@ -8,15 +8,28 @@
 
 #import "ViewController.h"
 
-@interface ViewController ()
+@interface ViewController (){
+    NSString *_valoreAttuale;
+}
 
 
 @end
 
 @implementation ViewController
 
+-(void)viewDidLoad{
+    _valoreAttuale = @"";
+}
+
 - (IBAction)buttonPressed:(UIButton *)sender {
     NSLog(@"Button pressed %@", sender.currentTitle);
+}
+
+-(IBAction)button1Pressed:(id)sender{
+    NSLog(@"Premuto tasto");
+    NSString *messaggio = [NSString stringWithFormat:@"%i",6];
+    _valoreAttuale = [_valoreAttuale stringByAppendingString:messaggio];
+    [self.myLabel setText:_valoreAttuale];
 }
 
 @end

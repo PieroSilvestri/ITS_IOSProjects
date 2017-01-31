@@ -10,6 +10,9 @@
 
 @interface ViewController : UIViewController
 
+@property (nonatomic, weak) IBOutlet UILabel *myLabel;
+
+-(IBAction)button1Pressed:(id)sender;
 
 @end
 
