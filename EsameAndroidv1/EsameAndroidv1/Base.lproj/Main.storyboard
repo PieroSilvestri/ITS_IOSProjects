@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Zaa-G1-xrA">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="lEa-xL-cCi">
+            <objects>
+                <navigationController id="Zaa-G1-xrA" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="RX4-1f-Hq9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BCW-72-jqy" kind="relationship" relationship="rootViewController" id="RNd-4K-t5F"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lb8-lz-Yln" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-790" y="128"/>
+        </scene>
+        <!--Esame Anroid v1-->
+        <scene sceneID="AlT-0p-EjN">
+            <objects>
+                <viewController id="BCW-72-jqy" customClass="MainViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Vz2-b1-f5F"/>
+                        <viewControllerLayoutGuide type="bottom" id="W8V-zN-Wt8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1L0-MB-veW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WQf-0r-JVH">
+                                <rect key="frame" x="10" y="621" width="355" height="36"/>
+                                <color key="backgroundColor" red="1" green="0.51030421400000003" blue="0.42045855459999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Aggiungi">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mUy-p3-Gqf">
+                                <rect key="frame" x="0.0" y="74" width="375" height="547"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="maincell" id="XTT-zu-KFl">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XTT-zu-KFl" id="kad-SI-z8Y">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="WQf-0r-JVH" secondAttribute="trailing" constant="10" id="5SS-iA-hca"/>
+                            <constraint firstAttribute="trailing" secondItem="mUy-p3-Gqf" secondAttribute="trailing" id="9Bz-qt-njS"/>
+                            <constraint firstItem="mUy-p3-Gqf" firstAttribute="top" secondItem="Vz2-b1-f5F" secondAttribute="bottom" constant="10" id="A7r-w2-PYA"/>
+                            <constraint firstItem="mUy-p3-Gqf" firstAttribute="leading" secondItem="1L0-MB-veW" secondAttribute="leading" id="BXm-rk-z72"/>
+                            <constraint firstItem="WQf-0r-JVH" firstAttribute="leading" secondItem="1L0-MB-veW" secondAttribute="leading" constant="10" id="gtA-FP-tnT"/>
+                            <constraint firstItem="W8V-zN-Wt8" firstAttribute="top" secondItem="WQf-0r-JVH" secondAttribute="bottom" constant="10" id="ogE-Q4-9xB"/>
+                            <constraint firstItem="WQf-0r-JVH" firstAttribute="top" secondItem="mUy-p3-Gqf" secondAttribute="bottom" id="wjl-am-W1k"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Esame Anroid v1" id="wHn-3Q-uPD"/>
+                    <connections>
+                        <outlet property="myTableView" destination="mUy-p3-Gqf" id="uQi-2k-fit"/>
+                        <outlet property="tableView" destination="mUy-p3-Gqf" id="TrV-Ut-qcW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cZI-pq-etK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="140" y="131"/>
+        </scene>
+    </scenes>
+</document>

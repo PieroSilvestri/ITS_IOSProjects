@@ -9,6 +9,7 @@
 #import "ViewController.h"
 
 @interface ViewController ()
+@property (weak, nonatomic) IBOutlet UITextField *display;
 
 @end
 
@@ -25,5 +26,12 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(IBAction)buttonPressed:(UIButton *)sender{
+    NSLog(@"Button pressed %@", sender.currentTitle);
+}
+
+-(IBAction)didNumberPressed:(UIButton *)sender{
+    self.display.text = [self.display.text stringByAppendingString:sender.currentTitle];
+}
 
 @end

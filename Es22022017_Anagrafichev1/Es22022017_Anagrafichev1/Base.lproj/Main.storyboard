@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="cLP-af-3xB">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Anagrafiche-->
+        <scene sceneID="N3b-up-7zG">
+            <objects>
+                <tableViewController id="EHe-Nx-Sdk" customClass="TableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Yy0-To-h5q">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="G6K-Gf-tQ2">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="G6K-Gf-tQ2" id="8Yx-Kr-6m6">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="U8t-4w-Ybv" kind="show" identifier="detailButtonID" id="sfM-f2-ukq"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="EHe-Nx-Sdk" id="q2P-UC-l8N"/>
+                            <outlet property="delegate" destination="EHe-Nx-Sdk" id="pgX-f8-2ou"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Anagrafiche" id="4Ga-kN-TvQ"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="plj-41-jop" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-754" y="101"/>
+        </scene>
+        <!--Dettaglio-->
+        <scene sceneID="jSI-da-9K7">
+            <objects>
+                <viewController storyboardIdentifier="detailControllerID" title="Dettaglio" id="U8t-4w-Ybv" customClass="DetailController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="u92-HF-ZCA"/>
+                        <viewControllerLayoutGuide type="bottom" id="B1d-FU-Udz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="f48-QG-u2p">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="81Y-NL-KRj">
+                                <rect key="frame" x="0.0" y="72" width="375" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N79-6k-0BV">
+                                        <rect key="frame" x="0.0" y="0.0" width="94" height="30"/>
+                                        <state key="normal" title="Salva"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xIi-ly-DLf">
+                                        <rect key="frame" x="94" y="0.0" width="93.5" height="30"/>
+                                        <state key="normal" title="Annulla"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h9f-L8-4Ms">
+                                        <rect key="frame" x="187.5" y="0.0" width="94" height="30"/>
+                                        <state key="normal" title="Modifica"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zGf-6n-ryh">
+                                        <rect key="frame" x="281.5" y="0.0" width="93.5" height="30"/>
+                                        <state key="normal" title="Cancella"/>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="xIi-ly-DLf" firstAttribute="width" secondItem="N79-6k-0BV" secondAttribute="width" id="Mbd-tc-WUH"/>
+                                    <constraint firstItem="h9f-L8-4Ms" firstAttribute="width" secondItem="N79-6k-0BV" secondAttribute="width" id="jqz-2j-GvY"/>
+                                    <constraint firstItem="zGf-6n-ryh" firstAttribute="width" secondItem="N79-6k-0BV" secondAttribute="width" id="xPZ-wG-uMS"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="81Y-NL-KRj" secondAttribute="trailing" id="Idx-3T-YuS"/>
+                            <constraint firstItem="81Y-NL-KRj" firstAttribute="top" secondItem="u92-HF-ZCA" secondAttribute="bottom" constant="8" id="PIb-HZ-0A2"/>
+                            <constraint firstItem="81Y-NL-KRj" firstAttribute="leading" secondItem="f48-QG-u2p" secondAttribute="leading" id="pmn-iA-3sf"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Dettaglio" id="Nfc-kk-q97"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uOb-Ek-Izv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-60" y="100"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="cHk-oe-KPJ">
+            <objects>
+                <navigationController id="cLP-af-3xB" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="K3Y-4I-sUO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="EHe-Nx-Sdk" kind="relationship" relationship="rootViewController" id="oyw-2U-9BE"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YLp-Lp-wtR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1496" y="102"/>
+        </scene>
+    </scenes>
+</document>
